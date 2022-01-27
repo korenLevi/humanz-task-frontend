@@ -16,13 +16,13 @@ export const EditClient = (props) => {
 
   const onSaveClient = async (ev) => {
     ev.preventDefault()
-    // if(!clientService.checkValidation(client)) {
-    //   setShow(true)
-    //   setTimeout(()=>{
-    //     setShow(false)
-    //   },4000)
-    //   return
-    // }
+    if(!clientService.checkValidation(client)) {
+      setShow(true)
+      setTimeout(()=>{
+        setShow(false)
+      },3500)
+      return
+    }
     props.saveClient(client)
     handleClose()
   }
